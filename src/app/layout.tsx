@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Portfolio cá nhân của Lê Quang Trí Đạt, giới thiệu về bản thân, kỹ năng và các dự án đã thực hiện.",
     images: [
       {
-        url: "/4x6_1000.jpg",
+        url: "/meta.png",
         width: 1000,
         height: 500,
       },
