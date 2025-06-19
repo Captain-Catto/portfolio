@@ -76,7 +76,7 @@ export const translations = {
         shoppingCart:
           "🛒 Shopping Cart – Add, remove, and manage products with persistent cart state.",
         paymentIntegration:
-          "💳 Payment Integration – Secure checkout process with Momo payment gateway.",
+          "💳 Payment Integration – Secure checkout process with VnPay payment gateway.",
         userAuth:
           "👤 User Authentication – Register, login, and manage user profiles.",
         responsiveDesign:
@@ -165,7 +165,7 @@ export const translations = {
         shoppingCart:
           "🛒 Giỏ Hàng – Thêm, xóa và quản lý sản phẩm với trạng thái giỏ hàng bền vững.",
         paymentIntegration:
-          "💳 Tích Hợp Thanh Toán – Quy trình thanh toán an toàn với cổng thanh toán Momo.",
+          "💳 Tích Hợp Thanh Toán – Quy trình thanh toán an toàn với cổng thanh toán VnPay.",
         userAuth:
           "👤 Xác Thực Người Dùng – Đăng ký, đăng nhập và quản lý hồ sơ người dùng.",
         responsiveDesign:
