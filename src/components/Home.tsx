@@ -194,7 +194,7 @@ const Home: React.FC = () => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.8 }}
-            className="w-40 h-40 lg:w-56 lg:h-56 rounded-full object-cover bg-[#222] relative z-10"
+            className="w-55 h-55 lg:w-70 lg:h-70 rounded-full object-cover bg-[#222] relative z-10"
           />
         </motion.div>
       </motion.div>
