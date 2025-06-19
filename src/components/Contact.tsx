@@ -137,7 +137,7 @@ export default function ContactMotion() {
             <div className="text-xs text-white/60 group-hover:text-white/80 transition-colors">
               {t("contactEmail")}
             </div>
-            <div className="text-base text-[#00ff99] font-mono group-hover:text-[#00ff99] transition-colors">
+            <div className="text-base text-[#00ff99] font-mono group-hover:text-[#00ff99] transition-colors break-all">
               lequangtridat2000@gmail.com
             </div>
           </div>
