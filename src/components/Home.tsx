@@ -126,21 +126,22 @@ const Home: React.FC = () => {
             >
               {t("downloadCV")}
             </motion.button>
-            <div className="flex gap-4 justify-center">
+            <ul className="flex gap-4 justify-center list-none m-0 p-0">
               {socialLinks.map((item) => (
-                <motion.a
-                  key={item.label}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, color: "#00ff99" }}
-                  className="text-gray-500 dark:text-[#b0b0b0] text-2xl transition-colors duration-200"
-                  aria-label={item.label}
-                >
-                  {item.icon}
-                </motion.a>
+                <li key={item.label}>
+                  <motion.a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.2, color: "#00ff99" }}
+                    className="text-gray-500 dark:text-[#b0b0b0] text-2xl transition-colors duration-200"
+                    aria-label={item.label}
+                  >
+                    {item.icon}
+                  </motion.a>
+                </li>
               ))}
-            </div>
+            </ul>
           </motion.div>
         </motion.div>
 
