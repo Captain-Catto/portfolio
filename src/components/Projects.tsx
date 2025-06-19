@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
             projectKey={project.key}
             image={project.image}
             liveDemoUrl={project.liveDemoUrl}
-            detailsUrl={project.detailsUrl}
+            detailsUrl={project.detailsUrl || `/project/${project.key}`}
           />
         ))}
       </div>

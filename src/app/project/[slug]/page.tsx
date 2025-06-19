@@ -2,9 +2,16 @@ import { projectDetails } from "@/app/data/projects";
 import { notFound } from "next/navigation";
 import ProjectDetailWrapper from "./ProjectDetailWrapper";
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
+  // Await params vì nó là Promise
+  const { slug } = await params;
+
   // Tìm project theo slug
-  const project = projectDetails.find((p) => p.key === params.slug);
+  const project = projectDetails.find((p) => p.key === slug);
 
   // Nếu không tìm thấy project, hiển thị 404
   if (!project) {
@@ -12,7 +19,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   }
 
   // Render wrapper component với slug
-  return <ProjectDetailWrapper slug={params.slug} />;
+  return <ProjectDetailWrapper slug={slug} />;
 }
 
 // Optional: Generate static params for better performance
@@ -26,9 +33,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const project = projectDetails.find((p) => p.key === params.slug);
+  // Await params vì nó là Promise
+  const { slug } = await params;
+  
+  const project = projectDetails.find((p) => p.key === slug);
 
   if (!project) {
     return {
