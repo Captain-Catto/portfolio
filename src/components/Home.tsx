@@ -81,7 +81,7 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="bg-white dark:bg-[#18191A] text-black dark:text-white flex flex-col justify-center font-mono pt-5"
+      className="text-black dark:text-white flex flex-col justify-center font-mono pt-5"
     >
       <motion.div
         ref={ref}
