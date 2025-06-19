@@ -25,6 +25,82 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.circle-animate {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.6;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5, #42e695, #ff6ec4);
+  background-size: 200% 200%;
+  animation: circleGradientMove 8s ease-in-out infinite alternate;
+}
+
+/* Thêm các class riêng cho từng cục */
+.circle-1 {
+  animation: circleGradientMove 8s ease-in-out infinite alternate,
+    circleMove1 6s ease-in-out infinite alternate;
+}
+.circle-2 {
+  animation: circleGradientMove 8s ease-in-out infinite alternate,
+    circleMove2 6s ease-in-out infinite alternate;
+}
+.circle-3 {
+  animation: circleGradientMove 8s ease-in-out infinite alternate,
+    circleMove3 6s ease-in-out infinite alternate;
+}
+
+@keyframes circleGradientMove {
+  0% {
+    background-position: 0% 50%;
+    filter: blur(60px);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: blur(80px);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: blur(60px);
+  }
+}
+
+/* Keyframes cho chuyển động từng cục */
+@keyframes circleMove1 {
+  0% {
+    transform: translateX(-120px) scale(1);
+  }
+  50% {
+    transform: translateX(0px) scale(1.15);
+  }
+  100% {
+    transform: translateX(-120px) scale(1);
+  }
+}
+@keyframes circleMove2 {
+  0% {
+    transform: translateX(120px) scale(1);
+  }
+  50% {
+    transform: translateX(0px) scale(1.15);
+  }
+  100% {
+    transform: translateX(120px) scale(1);
+  }
+}
+@keyframes circleMove3 {
+  0% {
+    transform: translateY(120px) scale(1);
+  }
+  50% {
+    transform: translateY(0px) scale(1.15);
+  }
+  100% {
+    transform: translateY(120px) scale(1);
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

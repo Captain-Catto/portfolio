@@ -8,6 +8,11 @@ export default function MainPage() {
   return (
     <>
       <Navbar />
+      <div className="fixed inset-0 flex justify-center items-center pointer-events-none z-[-1]">
+        <div className="circle-animate circle-1"></div>
+        <div className="circle-animate circle-2"></div>
+        <div className="circle-animate circle-3"></div>
+      </div>
       <section id="home">
         <Home />
       </section>
