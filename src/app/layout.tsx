@@ -1,4 +1,4 @@
-// import type { Metadata } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Inter } from "next/font/google";
@@ -7,6 +7,24 @@ const inter = Inter({
   subsets: ["latin", "vietnamese"],
   display: "swap",
 });
+
+export const metadata: Metadata = {
+  title: "Portfolio - Lê Quang Trí Đạt",
+  description:
+    "Portfolio cá nhân của Lê Quang Trí Đạt, giới thiệu về bản thân, kỹ năng và các dự án đã thực hiện.",
+  openGraph: {
+    title: "Portfolio - Lê Quang Trí Đạt",
+    description:
+      "Portfolio cá nhân của Lê Quang Trí Đạt, giới thiệu về bản thân, kỹ năng và các dự án đã thực hiện.",
+    images: [
+      {
+        url: "/4x6_1000.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
 
 export default function RootLayout({
   children,
