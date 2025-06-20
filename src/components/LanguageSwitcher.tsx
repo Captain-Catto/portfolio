@@ -12,7 +12,7 @@ export const LanguageSwitcher = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="p-2 rounded-full font-semibold text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+      className="p-2 rounded-full font-semibold text-gray-200 hover:bg-gray-700"
     >
       {language.toUpperCase()}
     </button>
