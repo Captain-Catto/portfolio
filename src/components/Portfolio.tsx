@@ -116,7 +116,7 @@ export default function Portfolio() {
               key={tabItem.labelKey}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`flex-1 flex flex-col items-center py-3 px-2 font-medium transition-all duration-200
+              className={`flex-1 flex flex-col items-center py-3 px-2 font-medium transition-all duration-200 cursor-pointer
                 ${
                   tab === idx
                     ? "text-[#00ff99] border-b-2 border-green-400 bg-white/5"

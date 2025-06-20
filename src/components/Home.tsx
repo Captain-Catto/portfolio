@@ -12,6 +12,10 @@ const containerVariants = {
   show: { transition: { staggerChildren: 0.18 } },
 };
 
+// itemVariant sẽ xử lý hiệu ứng cho từng mục trong container
+// khi nó được hiển thị. Hiệu ứng này sẽ làm cho mục xuất hiện từ dưới
+// lên với độ trễ nhất định.
+// Điều này tạo ra hiệu ứng mượt mà khi các mục xuất hiện lần lượt.
 const itemVariants = {
   hidden: { opacity: 0, y: 40 },
   show: {
@@ -45,8 +49,12 @@ const socialLinks = [
 ];
 
 const Home: React.FC = () => {
+  // Sử dụng useLanguage để lấy ngôn ngữ hiện tại và hàm dịch
+  // Các vai trò sẽ được hiển thị trong phần TypingText
   const { t, language } = useLanguage();
   const roles = [t("role1"), t("role2"), t("role3")];
+  // Sử dụng useRef để theo dõi phần tử DOM và useInView để kiểm tra
+  // xem nó có trong viewport hay không
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
 
@@ -71,10 +79,13 @@ const Home: React.FC = () => {
 
     // Tạo link tạm thời để download
     const link = document.createElement("a");
+    // set thuộc tính href và download cho link
     link.href = cvPath;
     link.download = fileName;
+    // Thêm link vào body và click để download
     document.body.appendChild(link);
     link.click();
+    // Xóa link tạm thời sau khi download
     document.body.removeChild(link);
   };
 
@@ -194,7 +205,7 @@ const Home: React.FC = () => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.8 }}
-            className="w-55 h-55 lg:w-70 lg:h-70 rounded-full object-cover bg-[#222] relative z-10"
+            className="w-55 h-55 lg:w-70 lg:h-70 rounded-full bg-[#222] relative z-10 object-cover object-top"
           />
         </motion.div>
       </motion.div>
