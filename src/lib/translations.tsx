@@ -29,20 +29,10 @@ export const translations = {
 
     // Projects data
     projects: {
-      blendy: {
-        title: "Blendy",
+      "online-store": {
+        title: "Online Store",
         description:
-          "A social app where you can connect in real-time, log in with one click, share moments, posts instantly.",
-      },
-      intervueai: {
-        title: "IntervueAI",
-        description:
-          "Real-time mock interviews with AI, no forms or clicks just natural, personalized conversations.",
-      },
-      watchit: {
-        title: "WATCHit",
-        description:
-          "A video streaming app made for easy, personal entertainment and everything you love to binge.",
+          "A modern e-commerce platform built with Next.js and Tailwind CSS, featuring a user-friendly interface and robust functionality.",
       },
     },
     // Portfolio section
@@ -118,20 +108,10 @@ export const translations = {
 
     // Projects data
     projects: {
-      blendy: {
-        title: "Blendy",
+      "online-store": {
+        title: "Online Store",
         description:
-          "Ứng dụng mạng xã hội kết nối thời gian thực, đăng nhập một cú click, chia sẻ khoảnh khắc ngay lập tức.",
-      },
-      intervueai: {
-        title: "IntervueAI",
-        description:
-          "Phỏng vấn thử với AI thời gian thực, không cần form hay click, chỉ là cuộc trò chuyện tự nhiên và cá nhân hóa.",
-      },
-      watchit: {
-        title: "WATCHit",
-        description:
-          "Ứng dụng xem video được tạo ra để giải trí cá nhân dễ dàng và mọi thứ bạn yêu thích để xem marathon.",
+          "Trang thương mại điện tử hiện đại được xây dựng bằng Next.js và Tailwind CSS, với giao diện thân thiện và tính năng mạnh mẽ.",
       },
     },
     // Portfolio section
