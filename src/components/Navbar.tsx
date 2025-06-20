@@ -37,12 +37,12 @@ const Navbar = () => {
       className={`top-0 left-0 right-0 w-full z-50 transition-all duration-300
         ${
           isSticky
-            ? " fixed bg-white/80 dark:bg-black/80 shadow-md backdrop-blur-sm"
+            ? " fixed bg-black/80 shadow-md backdrop-blur-sm"
             : "bg-transparent"
         }
       `}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center p-4 text-black dark:text-white">
+      <div className="max-w-7xl mx-auto flex justify-between items-center p-4 text-white">
         {/* Logo */}
         <div className="text-2xl font-bold z-50">
           <a
@@ -132,7 +132,7 @@ const Navbar = () => {
         >
           <div className="fixed inset-0 bg-black/40" aria-hidden="true" />
           <div className="fixed inset-0 flex justify-end">
-            <Dialog.Panel className="w-4/5 max-w-xs h-full bg-white dark:bg-black shadow-lg pt-32 px-8 flex flex-col items-center transition-transform duration-300">
+            <Dialog.Panel className="w-4/5 max-w-xs h-full bg-black shadow-lg pt-32 px-8 flex flex-col items-center transition-transform duration-300">
               <button
                 className="absolute top-6 right-6 text-2xl"
                 onClick={() => setMenuOpen(false)}

@@ -81,7 +81,7 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="text-black dark:text-white flex flex-col justify-center font-mono pt-5"
+      className="text-white flex flex-col justify-center font-mono pt-5"
     >
       <motion.div
         ref={ref}
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="text-gray-600 dark:text-[#b0b0b0] mt-4 mb-8 text-base md:text-lg max-w-lg"
+            className="text-[#b0b0b0] mt-4 mb-8 text-base md:text-lg max-w-lg"
           >
             {t("description")}
           </motion.p>
@@ -134,7 +134,7 @@ const Home: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.2, color: "#00ff99" }}
-                    className="text-gray-500 dark:text-[#b0b0b0] text-2xl transition-colors duration-200"
+                    className="text-[#b0b0b0] text-2xl transition-colors duration-200"
                     aria-label={item.label}
                   >
                     {item.icon}
