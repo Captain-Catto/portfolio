@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "common": {
+    "available": "Available",
+    "resume": "Resume",
+    "location": "Location",
+    "languages": "Languages",
+    "education": "Education",
+    "certificates": "Certificates",
+    "myStack": "My Stack",
+    "experience": "Experience",
+    "workShowcase": "Work Showcase",
+    "verifyCertificate": "Verify Certificate",
+    "liveDemo": "Live Demo",
+    "details": "Details",
+    "downloadResume": "Download Resume PDF"
+  },
+  "stats": {
+    "projects": "Projects",
+    "happyClients": "Happy Clients",
+    "yearsExpertise": "Year Expertise"
+  },
+  "theme": {
+    "switchToDark": "Switch to Dark Mode",
+    "switchToLight": "Switch to Light Mode",
+    "switchLanguage": "Switch Language",
+    "switchToGrid": "Switch to Grid View",
+    "switchToList": "Switch to List View"
+  },
+  "personalInfo": {
+    "imA": "I'm a"
+  }
+}

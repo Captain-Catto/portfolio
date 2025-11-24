@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "experience": "Kinh nghiệm",
+    "skills": "Kỹ năng",
+    "contact": "Liên hệ"
+  },
+  "common": {
+    "available": "Sẵn sàng",
+    "resume": "CV",
+    "location": "Nơi ở",
+    "languages": "Ngôn ngữ",
+    "education": "Học vấn",
+    "certificates": "Chứng chỉ",
+    "myStack": "Công nghệ",
+    "experience": "Kinh nghiệm",
+    "workShowcase": "Các dự án đã làm",
+    "verifyCertificate": "Xác minh chứng chỉ",
+    "liveDemo": "Xem demo",
+    "details": "Chi tiết",
+    "downloadResume": "Tải CV (PDF)"
+  },
+  "stats": {
+    "projects": "Dự Án",
+    "happyClients": "Khách Hàng Hài Lòng",
+    "yearsExpertise": "Năm Kinh Nghiệm"
+  },
+  "theme": {
+    "switchToDark": "Chuyển sang chế độ tối",
+    "switchToLight": "Chuyển sang chế độ sáng",
+    "switchLanguage": "Đổi ngôn ngữ",
+    "switchToGrid": "Chuyển sang lưới",
+    "switchToList": "Chuyển sang danh sách"
+  },
+  "personalInfo": {
+    "imA": "Tôi là"
+  }
+}

@@ -1,26 +1,234 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Light Mode Variables */
+:root,
+.light {
+  --background: rgb(236, 235, 222); /* #ECEBDE */
+  --foreground: rgb(34, 40, 49); /* Dark text for light mode */
+  --card: rgb(215, 211, 191); /* #D7D3BF */
+  --card-secondary: rgb(193, 186, 161); /* #C1BAA1 */
+  --card-foreground: rgb(34, 40, 49);
+  --primary: rgb(165, 157, 132); /* #A59D84 - darker earth tone for accent */
+  --primary-foreground: rgb(34, 40, 49);
+  --secondary: rgb(193, 186, 161); /* #C1BAA1 */
+  --secondary-foreground: rgb(34, 40, 49);
+  --muted: rgb(165, 157, 132); /* #A59D84 */
+  --muted-foreground: rgb(57, 62, 70);
+  --accent: rgb(165, 157, 132); /* #A59D84 */
+  --accent-foreground: rgb(34, 40, 49);
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(34, 40, 49, 0.2);
+  --input: rgb(193, 186, 161);
+  --ring: rgb(165, 157, 132); /* #A59D84 */
+
+  /* Custom theme colors */
+  --bg-page: rgb(236, 235, 222); /* #ECEBDE */
+  --bg-card: rgb(215, 211, 191); /* #D7D3BF */
+  --bg-card-secondary: rgb(193, 186, 161); /* #C1BAA1 */
+  --text-primary: rgb(34, 40, 49);
+  --text-secondary: rgba(34, 40, 49, 0.8);
+  --text-muted: rgba(34, 40, 49, 0.5);
+  --border-default: rgba(34, 40, 49, 0.2);
+}
+
+/* Dark Mode Variables */
+.dark {
+  --background: rgb(34, 40, 49); /* #222831 */
+  --foreground: rgb(223, 208, 184); /* #DFD0B8 */
+  --card: rgb(57, 62, 70); /* #393E46 */
+  --card-secondary: rgb(148, 137, 121); /* #948979 */
+  --card-foreground: rgb(223, 208, 184);
+  --primary: rgb(148, 137, 121); /* #948979 - earth tone accent for dark mode */
+  --primary-foreground: rgb(34, 40, 49);
+  --secondary: rgb(148, 137, 121); /* #948979 */
+  --secondary-foreground: rgb(223, 208, 184);
+  --muted: rgb(57, 62, 70); /* #393E46 */
+  --muted-foreground: rgb(148, 137, 121);
+  --accent: rgb(148, 137, 121); /* #948979 */
+  --accent-foreground: rgb(34, 40, 49);
+  --destructive: #dc2626;
+  --destructive-foreground: rgb(223, 208, 184);
+  --border: rgba(223, 208, 184, 0.2);
+  --input: rgb(57, 62, 70);
+  --ring: rgb(148, 137, 121); /* #948979 */
+
+  /* Custom theme colors */
+  --bg-page: rgb(34, 40, 49); /* #222831 */
+  --bg-card: rgb(57, 62, 70); /* #393E46 */
+  --bg-card-secondary: rgb(148, 137, 121); /* #948979 */
+  --text-primary: rgb(223, 208, 184); /* #DFD0B8 */
+  --text-secondary: rgba(223, 208, 184, 0.8);
+  --text-muted: rgba(223, 208, 184, 0.5);
+  --border-default: rgba(223, 208, 184, 0.2);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Dynamic theme utilities */
+.bg-theme-page {
+  background-color: var(--bg-page);
+}
+
+.bg-theme-card {
+  background-color: var(--bg-card);
+}
+
+.bg-theme-muted {
+  background-color: var(--bg-muted);
+}
+
+.bg-theme-accent {
+  background-color: var(--bg-accent);
+}
+
+.border-theme {
+  border-color: var(--border-default);
+}
+
+.text-theme-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.text-theme-muted {
+  color: var(--text-muted);
+}
+
+.hover\:bg-theme-accent:hover {
+  background-color: var(--bg-accent);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countUp {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Scrollbar Hide Utility */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Counter Animation */
+.counter {
+  animation: countUp 0.3s ease-out;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    rgb(165, 157, 132) 0%,
+    rgb(148, 137, 121) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(145, 108, 231, 0.2),
+    0 10px 10px -5px rgba(145, 108, 231, 0.1);
+}
+
+/* Pulse Animation for Availability Dot */
+@keyframes pulse-green {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom GitHub Calendar Styles */
+.react-activity-calendar {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.react-activity-calendar__scroll-container {
+  overflow-x: auto !important;
+}
+
+/* Smooth Transitions */
+* {
+  transition-property: background-color, border-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
