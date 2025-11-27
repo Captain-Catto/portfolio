@@ -46,12 +46,12 @@ export function PersonalCard({ className }: PersonalCardProps) {
     <div
       className={cn("bg-card border-2 border-border rounded-2xl", className)}
     >
-      <div className="p-4 h-full flex flex-col gap-2 justify-between bg-card rounded-lg shadow-md">
+      <div className="p-3 sm:p-4 h-full flex flex-col gap-2 justify-between bg-card rounded-lg shadow-md">
         {/* Header Section */}
-        <div className="flex justify-between">
-          <div className="flex items-center">
+        <div className="flex justify-between flex-wrap sm:flex-nowrap gap-2">
+          <div className="flex items-center flex-1">
             <Image
-              className="object-fit size-24 rounded-lg"
+              className="object-fit size-20 sm:size-24 rounded-lg"
               src={avatar}
               alt={name}
               width={96}
@@ -59,22 +59,22 @@ export function PersonalCard({ className }: PersonalCardProps) {
             />
             <div className="flex items-start justify-between h-full flex-col ml-2 md:ml-4">
               {/* Availability Badge */}
-              <article className="bg-secondary rounded-full shadow-md py-1 px-3 text-foreground/80 hover:bg-muted transition-all duration-300">
+              <article className="bg-secondary rounded-full shadow-md py-1 px-2 sm:px-3 text-foreground/80 hover:bg-muted transition-all duration-300">
                 <span className="flex justify-evenly items-center gap-[2px]">
-                  <div className="flex items-center justify-center rounded-full bg-muted w-4 h-4">
+                  <div className="flex items-center justify-center rounded-full bg-muted w-3 h-3 sm:w-4 sm:h-4">
                     <span
-                      className="block w-2.5 h-2.5 rounded-full"
+                      className="block w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full"
                       style={{ backgroundColor: "#6DD33D" }}
                     ></span>
                   </div>
-                  <span className="font-medium text-xs">
+                  <span className="font-medium text-[10px] sm:text-xs">
                     {availabilityStatus}
                   </span>
                 </span>
               </article>
 
-              <h3 className="font-semibold text-xl text-foreground">{name}</h3>
-              <p className="font-semibold text-sm">
+              <h3 className="font-semibold text-lg sm:text-xl text-foreground">{name}</h3>
+              <p className="font-semibold text-xs sm:text-sm">
                 <span className="text-foreground/80">
                   {t("personalInfo.imA")}
                 </span>{" "}
@@ -154,41 +154,41 @@ export function PersonalCard({ className }: PersonalCardProps) {
         </div>
 
         {/* Info Section */}
-        <div className="bg-card-secondary border border-border py-4 px-4 rounded-lg shadow-md space-y-3">
+        <div className="bg-card-secondary border border-border py-3 sm:py-4 px-3 sm:px-4 rounded-lg shadow-md space-y-2 sm:space-y-3">
           {/* Location */}
-          <div className="flex items-start gap-3">
-            <div className="text-primary text-lg">📍</div>
+          <div className="flex items-start gap-2 sm:gap-3">
+            <div className="text-primary text-base sm:text-lg">📍</div>
             <div className="flex flex-col">
-              <span className="font-medium text-xs text-muted-foreground text-left">
+              <span className="font-medium text-[10px] sm:text-xs text-muted-foreground text-left">
                 {t("common.location")}
               </span>
-              <span className="font-medium text-sm text-foreground/80">
+              <span className="font-medium text-xs sm:text-sm text-foreground/80">
                 {location}
               </span>
             </div>
           </div>
 
           {/* Languages */}
-          <div className="flex items-center gap-3">
-            <div className="text-primary text-lg">🌐</div>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="text-primary text-base sm:text-lg">🌐</div>
             <div className="flex flex-col">
-              <span className="font-medium text-xs text-muted-foreground text-left">
+              <span className="font-medium text-[10px] sm:text-xs text-muted-foreground text-left">
                 {t("common.languages")}
               </span>
-              <span className="font-medium text-sm text-foreground/80">
+              <span className="font-medium text-xs sm:text-sm text-foreground/80">
                 {languages.join(" & ")}
               </span>
             </div>
           </div>
 
           {/* Education */}
-          <div className="flex items-center gap-3">
-            <div className="text-primary text-lg">🎓</div>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="text-primary text-base sm:text-lg">🎓</div>
             <div className="flex flex-col">
-              <span className="font-medium text-xs text-muted-foreground text-left">
+              <span className="font-medium text-[10px] sm:text-xs text-muted-foreground text-left">
                 {t("common.education")}
               </span>
-              <span className="font-medium text-sm text-foreground/80">
+              <span className="font-medium text-xs sm:text-sm text-foreground/80">
                 {university}
               </span>
             </div>
@@ -196,7 +196,7 @@ export function PersonalCard({ className }: PersonalCardProps) {
         </div>
 
         {/* Social Links */}
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-3 sm:gap-4">
           {socialLinks.map((social, index) => {
             const IconComponent = social.icon;
             return (
@@ -206,14 +206,14 @@ export function PersonalCard({ className }: PersonalCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.ariaLabel}
-                className="bg-secondary rounded-full p-3 flex justify-center items-center hover:bg-muted transition-all duration-300"
+                className="bg-secondary rounded-full p-2 sm:p-3 flex justify-center items-center hover:bg-muted transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <IconComponent className="text-foreground/70 text-xl" />
+                <IconComponent className="text-foreground/70 text-lg sm:text-xl" />
               </motion.a>
             );
           })}

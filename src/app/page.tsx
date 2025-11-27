@@ -1,8 +1,7 @@
 "use client";
 
-import { statistics, certificates } from "@/lib/data";
+import { certificates } from "@/lib/data";
 import { useState, useEffect } from "react";
-import { useTheme } from "@/contexts/ThemeContext";
 import { PersonalCard } from "@/components/cards/personal-card";
 import { ExperienceCard } from "@/components/cards/experience-card";
 import { SkillsCard } from "@/components/cards/skills-card";
@@ -19,14 +18,13 @@ export default function Home() {
     number
   >(-1);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
-  const totalCards = 8; // Total number of cards
-  const { language } = useTheme();
+  const totalCards = 5; // Total number of cards (PersonalCard, SkillsCard, ExperienceCard, CertificatesCard, ProjectsGallery)
 
   useEffect(() => {
-    // Wait for loading screen to complete (2.5 seconds total including fade out)
+    // Wait for loading screen to complete (1 second for faster mobile experience)
     const loadingTimeout = setTimeout(() => {
       setIsLoadingComplete(true);
-    }, 2500);
+    }, 1000);
 
     return () => clearTimeout(loadingTimeout);
   }, []);
@@ -45,8 +43,8 @@ export default function Home() {
 
     // Show cards one by one with random delays for wave effect
     shuffled.forEach((cardIndex, i) => {
-      const baseDelay = i * 150; // Base delay between cards
-      const randomDelay = Math.random() * 300; // Random delay for wave effect
+      const baseDelay = i * 100; // Base delay between cards (reduced for faster loading)
+      const randomDelay = Math.random() * 150; // Random delay for wave effect (reduced)
       const totalDelay = baseDelay + randomDelay;
 
       setTimeout(() => {
@@ -58,37 +56,30 @@ export default function Home() {
         });
       }, totalDelay);
     });
-  }, [isLoadingComplete]);
+
+    // Safety fallback: ensure all cards are loaded after 2 seconds
+    const fallbackTimeout = setTimeout(() => {
+      setLoadedCards(Array.from({ length: totalCards }, (_, i) => i));
+      console.log("Fallback: loaded all cards");
+    }, 2000);
+
+    return () => clearTimeout(fallbackTimeout);
+  }, [isLoadingComplete, totalCards]);
 
   const isCardLoaded = (index: number) => loadedCards.includes(index);
 
-  const translations = {
-    en: {
-      projects: "Projects",
-      happyClients: "Happy Clients",
-      yearsExpertise: "Year Expertise",
-    },
-    vi: {
-      projects: "Dự Án",
-      happyClients: "Khách Hàng Hài Lòng",
-      yearsExpertise: "Năm Kinh Nghiệm",
-    },
-  };
-
-  const t = translations[language];
-
   return (
     <main
-      className={`flex justify-center items-center h-screen p-3 lg:p-4 xl:p-5 bg-background overflow-hidden transition-opacity duration-500 ${
+      className={`flex justify-center md:items-center min-h-screen xl:h-screen p-2 sm:p-3 md:p-4 lg:p-3 xl:p-4 bg-background overflow-x-hidden transition-opacity duration-500 ${
         isLoadingComplete ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="w-full mx-auto h-full">
-        <section className="h-full">
-          <div className="select-none grid gap-3 md:grid-cols-2 xl:grid-cols-7 xl:grid-rows-5 xl:gap-3 text-center h-full max-h-full">
-            {/* Personal Card - Top Center (xl:col-span-3 xl:row-span-2) */}
+      <div className="w-full mx-auto xl:h-full max-w-[1920px]">
+        <section className="xl:h-full py-4 md:py-0">
+          <div className="select-none grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 md:gap-3 lg:grid-cols-4 lg:gap-3 xl:grid-cols-7 xl:grid-rows-5 xl:gap-3 text-center xl:h-full">
+            {/* Personal Card - Top Center */}
             <div
-              className={`xl:col-span-3 xl:row-span-3 xl:col-start-3 xl:row-start-1`}
+              className={`min-h-[250px] sm:min-h-[280px] md:min-h-0 md:col-span-2 lg:col-span-2 lg:col-start-3 lg:row-start-1 xl:col-span-3 xl:row-span-3 xl:col-start-3 xl:row-start-1`}
               style={{
                 opacity: isCardLoaded(0) ? 1 : 0,
                 transform: `translateY(${isCardLoaded(0) ? 0 : 20}px) scale(${
@@ -100,23 +91,9 @@ export default function Home() {
               <PersonalCard className="h-full" />
             </div>
 
-            {/* Experience Card (xl:col-span-2 xl:row-span-3) */}
+            {/* Skills Card */}
             <div
-              className={`xl:col-span-2 xl:row-span-3 xl:col-start-1 xl:row-start-3`}
-              style={{
-                opacity: isCardLoaded(1) ? 1 : 0,
-                transform: `translateY(${isCardLoaded(1) ? 0 : 20}px) scale(${
-                  isCardLoaded(1) ? 1 : 0.95
-                })`,
-                transition: "all 1s cubic-bezier(0.4, 0, 0.2, 1)",
-              }}
-            >
-              <ExperienceCard className="h-full" />
-            </div>
-
-            {/* Skills Card (xl:col-span-2 xl:row-span-2) */}
-            <div
-              className={`xl:col-span-2 xl:row-span-2 xl:col-start-1 xl:row-start-1`}
+              className={`min-h-[280px] sm:min-h-[320px] md:min-h-0 md:col-span-1 lg:col-span-2 lg:col-start-1 lg:row-start-1 xl:col-span-2 xl:row-span-2 xl:col-start-1 xl:row-start-1`}
               style={{
                 opacity: isCardLoaded(2) ? 1 : 0,
                 transform: `translateY(${isCardLoaded(2) ? 0 : 20}px) scale(${
@@ -128,9 +105,23 @@ export default function Home() {
               <SkillsCard className="h-full" />
             </div>
 
-            {/* Certificates Card - Bottom Left (xl:col-span-2 xl:row-span-2) */}
+            {/* Experience Card */}
             <div
-              className={`xl:col-span-3 xl:row-span-2 xl:col-start-3 xl:row-start-4`}
+              className={`min-h-[220px] sm:min-h-[250px] md:min-h-0 md:col-span-1 lg:col-span-2 lg:col-start-1 lg:row-start-2 xl:col-span-2 xl:row-span-3 xl:col-start-1 xl:row-start-3`}
+              style={{
+                opacity: isCardLoaded(1) ? 1 : 0,
+                transform: `translateY(${isCardLoaded(1) ? 0 : 20}px) scale(${
+                  isCardLoaded(1) ? 1 : 0.95
+                })`,
+                transition: "all 1s cubic-bezier(0.4, 0, 0.2, 1)",
+              }}
+            >
+              <ExperienceCard className="h-full" />
+            </div>
+
+            {/* Certificates Card */}
+            <div
+              className={`min-h-[250px] sm:min-h-[280px] md:min-h-0 md:col-span-2 lg:col-span-4 lg:col-start-1 lg:row-start-3 xl:col-span-3 xl:row-span-2 xl:col-start-3 xl:row-start-4`}
               style={{
                 opacity: isCardLoaded(3) ? 1 : 0,
                 transform: `translateY(${isCardLoaded(3) ? 0 : 20}px) scale(${
@@ -149,9 +140,9 @@ export default function Home() {
               />
             </div>
 
-            {/* Projects Gallery - Right Side (xl:col-span-2 xl:row-span-5) */}
+            {/* Projects Gallery - Right Side */}
             <div
-              className={`xl:col-span-2 xl:row-span-5 xl:col-start-6 xl:row-start-1`}
+              className={`min-h-[400px] sm:min-h-[500px] md:min-h-0 md:col-span-2 lg:col-span-2 lg:col-start-3 lg:row-start-2 xl:col-span-2 xl:row-span-5 xl:col-start-6 xl:row-start-1`}
               style={{
                 opacity: isCardLoaded(4) ? 1 : 0,
                 transform: `translateY(${isCardLoaded(4) ? 0 : 20}px) scale(${

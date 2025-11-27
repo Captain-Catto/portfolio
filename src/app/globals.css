@@ -232,3 +232,57 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+
+/* Skill Card Shake Animation */
+@keyframes skill-shake {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: rotate(2deg) translate3d(0, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: rotate(-2deg) translate3d(0, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: rotate(0.5deg) translate3d(0, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+@keyframes skill-text-wobble {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-2px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(1px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+.skill-card-shake {
+  will-change: transform;
+  display: inline-flex;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.skill-card-shake:hover {
+  animation: skill-shake 0.7s ease-in-out both;
+  z-index: 10;
+}
+
+.skill-card-shake:hover > * {
+  animation: skill-text-wobble 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
