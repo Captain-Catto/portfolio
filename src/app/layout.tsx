@@ -20,13 +20,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bento Grid Portfolio - Le Quang Tri Dat",
+  title: "Portfolio - Le Quang Tri Dat",
   description:
-    "Full Stack Developer portfolio with scalable bento grid layout supporting multiple projects",
+    "Welcome to my portfolio website containing my projects and experience in web development",
   keywords:
     "portfolio, full stack developer, web developer, react, next.js, node.js",
   authors: [{ name: "Le Quang Tri Dat" }],
   robots: "index, follow",
+  openGraph: {
+    title: "Portfolio - Le Quang Tri Dat",
+    description:
+      "Welcome to my portfolio website containing my projects and experience in web development",
+    type: "website",
+    locale: "en_US",
+    siteName: "Le Quang Tri Dat Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Le Quang Tri Dat Portfolio",
+      },
+    ],
+  },
 };
 
 export const viewport = {
