@@ -20,6 +20,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
   title: "Portfolio - Le Quang Tri Dat",
   description:
     "Welcome to my portfolio website containing my projects and experience in web development",
