@@ -52,11 +52,11 @@ export function PersonalCard({ className }: PersonalCardProps) {
           <div className="flex items-center flex-1">
             <div className=" rounded-lg overflow-hidden bg-muted/30 flex items-center justify-center">
               <Image
-                className="object-contain w-full h-full"
+                className="object-contain"
                 src={avatar}
                 alt={name}
-                width={80}
-                height={80}
+                width={90}
+                height={90}
               />
             </div>
             <div className="flex items-start gap-2 h-full flex-col ml-2 md:ml-4">

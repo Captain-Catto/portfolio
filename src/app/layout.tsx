@@ -8,7 +8,7 @@ import { LoadingScreen } from "@/components/LoadingScreen";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap", // Improve font loading performance
+  display: "swap",
   preload: true,
 });
 
