@@ -49,25 +49,25 @@ export function usePersonalInfo(): UsePersonalInfoReturn {
   const socialLinks = useMemo<SocialLink[]>(
     () => [
       {
-        href: "https://github.com",
+        href: "https://github.com/Captain-Catto",
         icon: FaGithub,
         label: "GitHub",
         ariaLabel: "Visit GitHub profile",
       },
       {
-        href: "https://linkedin.com",
+        href: "https://www.linkedin.com/in/lequangtridat/",
         icon: FaLinkedin,
         label: "LinkedIn",
         ariaLabel: "Visit LinkedIn profile",
       },
       {
-        href: "mailto:example@email.com",
+        href: "mailto:lequangtridat2000@email.com",
         icon: FaEnvelope,
         label: "Email",
         ariaLabel: "Send email",
       },
       {
-        href: "https://facebook.com",
+        href: "https://www.facebook.com/blakesinclair1995",
         icon: FaFacebook,
         label: "Facebook",
         ariaLabel: "Visit Facebook profile",
@@ -86,7 +86,7 @@ export function usePersonalInfo(): UsePersonalInfoReturn {
     languages: personalData.languages,
     university: personalData.university,
     socialLinks,
-    loading: false, // No loading needed - data is static
-    error: null, // No error possible - data is static
+    loading: false,
+    error: null,
   };
 }

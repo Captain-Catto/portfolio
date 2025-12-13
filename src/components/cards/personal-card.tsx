@@ -46,18 +46,20 @@ export function PersonalCard({ className }: PersonalCardProps) {
     <div
       className={cn("bg-card border-2 border-border rounded-2xl", className)}
     >
-      <div className="p-3 sm:p-4 h-full flex flex-col gap-2 justify-between bg-card rounded-lg shadow-md">
+      <div className="p-3 sm:p-4 h-full flex flex-col justify-between gap-2 bg-card rounded-lg shadow-md">
         {/* Header Section */}
         <div className="flex justify-between flex-wrap sm:flex-nowrap gap-2">
           <div className="flex items-center flex-1">
-            <Image
-              className="object-fit size-20 sm:size-24 rounded-lg"
-              src={avatar}
-              alt={name}
-              width={96}
-              height={96}
-            />
-            <div className="flex items-start justify-between h-full flex-col ml-2 md:ml-4">
+            <div className=" rounded-lg overflow-hidden bg-muted/30 flex items-center justify-center">
+              <Image
+                className="object-contain w-full h-full"
+                src={avatar}
+                alt={name}
+                width={80}
+                height={80}
+              />
+            </div>
+            <div className="flex items-start gap-2 h-full flex-col ml-2 md:ml-4">
               {/* Availability Badge */}
               <article className="bg-secondary rounded-full shadow-md py-1 px-2 sm:px-3 text-foreground/80 hover:bg-muted transition-all duration-300">
                 <span className="flex justify-evenly items-center gap-[2px]">
@@ -73,7 +75,9 @@ export function PersonalCard({ className }: PersonalCardProps) {
                 </span>
               </article>
 
-              <h3 className="font-semibold text-lg sm:text-xl text-foreground">{name}</h3>
+              <h3 className="font-semibold text-lg sm:text-xl text-foreground">
+                {name}
+              </h3>
               <p className="font-semibold text-xs sm:text-sm">
                 <span className="text-foreground/80">
                   {t("personalInfo.imA")}
@@ -89,7 +93,9 @@ export function PersonalCard({ className }: PersonalCardProps) {
               <span className="hidden xl:block">{t("common.resume")}</span>
               <a
                 href={language === "en" ? cv.english : cv.vietnamese}
-                download={`CV_LeQuangTriDat_${language === "en" ? "EN" : "VI"}.pdf`}
+                download={`CV_LeQuangTriDat_${
+                  language === "en" ? "EN" : "VI"
+                }.pdf`}
               >
                 <article className="hover:bg-muted transition-all duration-300 cursor-pointer bg-secondary rounded-lg p-2 shadow-md">
                   <svg
@@ -129,7 +135,11 @@ export function PersonalCard({ className }: PersonalCardProps) {
                     <button
                       onClick={toggleTheme}
                       className="p-2 rounded-lg hover:bg-muted transition-all duration-300"
-                      title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+                      title={
+                        theme === "light"
+                          ? "Switch to Dark Mode"
+                          : "Switch to Light Mode"
+                      }
                     >
                       {theme === "light" ? (
                         <FaMoon className="size-4" />
@@ -162,7 +172,7 @@ export function PersonalCard({ className }: PersonalCardProps) {
               <span className="font-medium text-[10px] sm:text-xs text-muted-foreground text-left">
                 {t("common.location")}
               </span>
-              <span className="font-medium text-xs sm:text-sm text-foreground/80">
+              <span className="font-medium text-xs sm:text-sm text-foreground/80 text-left">
                 {location}
               </span>
             </div>
@@ -175,7 +185,7 @@ export function PersonalCard({ className }: PersonalCardProps) {
               <span className="font-medium text-[10px] sm:text-xs text-muted-foreground text-left">
                 {t("common.languages")}
               </span>
-              <span className="font-medium text-xs sm:text-sm text-foreground/80">
+              <span className="font-medium text-xs sm:text-sm text-foreground/80 text-left">
                 {languages.join(" & ")}
               </span>
             </div>
@@ -188,7 +198,7 @@ export function PersonalCard({ className }: PersonalCardProps) {
               <span className="font-medium text-[10px] sm:text-xs text-muted-foreground text-left">
                 {t("common.education")}
               </span>
-              <span className="font-medium text-xs sm:text-sm text-foreground/80">
+              <span className="font-medium text-xs sm:text-sm text-foreground/80 text-left">
                 {university}
               </span>
             </div>

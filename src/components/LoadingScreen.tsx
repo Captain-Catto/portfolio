@@ -55,13 +55,13 @@ export function LoadingScreen() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-8"
           >
-            <div className="w-32 h-32 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20">
+            <div className="rounded-full overflow-hidden shadow-2xl border-4 border-primary/20">
               <Image
                 src="/portfolio.jpg"
                 alt="Le Quang Tri Dat"
                 width={128}
                 height={128}
-                className="w-full h-full object-cover"
+                className="object-cover"
               />
             </div>
           </motion.div>

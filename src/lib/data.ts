@@ -587,6 +587,50 @@ export const experiencesI18n = {
         "Receive new feature requests. Implement independently or forward to dev team for development. Test, validate and deploy to live system.",
       startDate: "2025-10",
     },
+    {
+      id: 2,
+      title: "Trade Office Staff",
+      company: "Vicem Ha Tien",
+      location: "Ho Chi Minh City, Vietnam",
+      duration: "06/2022 - 06/2024",
+      description:
+        "Handled customer complaints and feedback during the sales process. Supervised employees to ensure proper customer service. Prepared sales reports and managed brand operations for the company and partners. Proposed promotional programs to management. Executed contracts with partners and prepared daily quotes and price lists.",
+      startDate: "2022-06",
+      endDate: "2024-06",
+    },
+    {
+      id: 3,
+      title: "Real Estate Salesman",
+      company: "PropertyX - Hung Thinh Corporation",
+      location: "Ho Chi Minh City, Vietnam",
+      duration: "02/2021 - 05/2022",
+      description:
+        "Found potential customers for investment projects. Handled arising issues during the product sales process. Managed customer complaints and feedback after the sales process.",
+      startDate: "2021-02",
+      endDate: "2022-05",
+    },
+    {
+      id: 4,
+      title: "Political Officer Assistant",
+      company: "Military Service",
+      location: "Vietnam",
+      duration: "01/2019 - 01/2021",
+      description:
+        "Wrote and edited documents as required. Organized and coordinated office activities when needed. Managed the office and drafted various types of documents. Inspected and prepared supplies for training and living activities. Performed political officer duties at the beginning and end of shifts.",
+      startDate: "2019-01",
+      endDate: "2021-01",
+    },
+    {
+      id: 5,
+      title: "Call Center Agent",
+      company: "Now",
+      location: "Ho Chi Minh City, Vietnam",
+      duration: "09/2017 - 01/2019",
+      description:
+        "Handled issues during the delivery process involving three parties (restaurant, delivery driver, and customer). Managed customer complaints and feedback.",
+      startDate: "2017-09",
+      endDate: "2019-01",
+    },
   ] as Experience[],
 
   vi: [
@@ -599,6 +643,50 @@ export const experiencesI18n = {
       description:
         "Nhận yêu cầu tính năng mới. Tự triển khai hoặc chuyển tiếp cho dev team phát triển. Test, validate và deploy vào hệ thống live.",
       startDate: "2025-10",
+    },
+    {
+      id: 2,
+      title: "Thượng vụ",
+      company: "Vicem Hà Tiên",
+      location: "Thành phố Hồ Chí Minh, Việt Nam",
+      duration: "06/2022 - 06/2024",
+      description:
+        "Xử lý các khiếu nại và ý kiến của khách hàng sau quá trình bán hàng. Giám sát các nhân viên, đảm bảo thực hiện ý kiến từ của khách hàng. Làm báo cáo hành, báo cáo thống và vận hành hệ thống các thương hiệu của bảo mẫng công ty và đối tác. Đề xuất các chương trình kích cầu cho quản lý. Thực hiện ký hợp đồng đối tác, lấy báo giá hàm nhật, giá.",
+      startDate: "2022-06",
+      endDate: "2024-06",
+    },
+    {
+      id: 3,
+      title: "Nhân viên kinh doanh bất động sản",
+      company: "Tập đoàn Hưng Thịnh - PropertyX",
+      location: "Thành phố Hồ Chí Minh, Việt Nam",
+      duration: "02/2021 - 05/2022",
+      description:
+        "Tìm kiếm khách hàng đầu tư vào các dự án. Xử lý các vấn đề xảy ra trong quá trình bán sản phẩm. Xử lý các khiếu nại và ý kiến của khách hàng sau quá trình bán hàng.",
+      startDate: "2021-02",
+      endDate: "2022-05",
+    },
+    {
+      id: 4,
+      title: "Trợ lý chính trị viên",
+      company: "Nghĩa vụ quân sự",
+      location: "Việt Nam",
+      duration: "01/2019 - 01/2021",
+      description:
+        "Viết và chỉnh sửa các văn bản theo yêu cầu. Sắp xếp và tổ chức hoạt động văn phòng khi có tác vụ. Quản lý văn phòng, soạn thảo các loại văn bản. Kiểm bổ và chuẩn bị các vật dụng trong phổ luyện thống và phòng sinh hoạt chung. Thực mạch chính trị viên đầu cầu, sẵn sàng như thủ.",
+      startDate: "2019-01",
+      endDate: "2021-01",
+    },
+    {
+      id: 5,
+      title: "Tổng đài viên",
+      company: "Now",
+      location: "Thành phố Hồ Chí Minh, Việt Nam",
+      duration: "09/2017 - 01/2019",
+      description:
+        "Xử lý các vấn đề trong quá trình giao hàng 3 bên (nhà hàng, người giao hàng và khách hàng). Xử lý các khiếu nại và ý kiến của khách hàng.",
+      startDate: "2017-09",
+      endDate: "2019-01",
     },
   ] as Experience[],
 };

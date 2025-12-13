@@ -19,10 +19,11 @@ const geistMono = Geist_Mono({
   preload: true,
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.lequangtridat.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-  ),
+  metadataBase: new URL(siteUrl),
   title: "Portfolio - Le Quang Tri Dat",
   description:
     "Welcome to my portfolio website containing my projects and experience in web development",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "Le Quang Tri Dat Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Le Quang Tri Dat Portfolio",
